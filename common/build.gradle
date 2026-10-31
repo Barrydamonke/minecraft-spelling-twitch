@@ -1,0 +1,35 @@
+// Version-independent code. It is compiled into every Minecraft version's jar (see mod.gradle),
+// and is built here on its own only to run its tests and to check it stays Java 8 compatible,
+// since Minecraft 1.16.1 runs on Java 8.
+plugins {
+	id 'java-library'
+}
+
+repositories {
+	mavenCentral()
+	maven {
+		name = 'Minecraft'
+		url = 'https://libraries.minecraft.net/'
+	}
+}
+
+dependencies {
+	// The oldest versions any supported Minecraft ships, so nothing newer sneaks in.
+	compileOnly "com.mojang:brigadier:1.0.17"
+	compileOnly "com.google.code.gson:gson:2.8.0"
+
+	testImplementation "com.mojang:brigadier:1.0.17"
+	testImplementation "com.google.code.gson:gson:2.8.0"
+	testImplementation platform("org.junit:junit-bom:5.12.2")
+	testImplementation "org.junit.jupiter:junit-jupiter"
+	testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 8
+	it.options.compilerArgs << "-Xlint:-options"
+}
+
+test {
+	useJUnitPlatform()
+}

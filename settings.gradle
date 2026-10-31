@@ -10,3 +10,9 @@ pluginManagement {
 }
 
 rootProject.name = 'twitchspelling'
+
+// Version-independent logic, shared by every Minecraft version.
+include 'common'
+// One project per supported Minecraft version.
+include 'mc26'
+include 'mc1161'

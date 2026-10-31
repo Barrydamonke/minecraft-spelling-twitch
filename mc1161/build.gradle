@@ -1,0 +1,26 @@
+plugins {
+	id 'fabric-loom'
+}
+
+apply from: rootProject.file("mod.gradle")
+
+// 1.16.1 can't split client and server code into separate source sets, so the client-only
+// timer lives in main. It is only loaded through the "client" entrypoint.
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	// Mojang's own names, so the code reads like the 26.3 version.
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+// Minecraft 1.16.1 runs on Java 8.
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 8
+	it.options.compilerArgs << "-Xlint:-options"
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+}

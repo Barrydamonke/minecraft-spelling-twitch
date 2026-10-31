@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "twitchspelling",
+	"version": "${version}",
+	"name": "Twitch Spelling",
+	"description": "Twitch chat spells words one letter at a time to summon mobs, items and blocks.",
+	"authors": [
+		"Barrydamonke"
+	],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.barrydamonke.twitchspelling.TwitchSpellingMod"
+		],
+		"client": [
+			"com.barrydamonke.twitchspelling.client.TwitchSpellingClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "1.16.1",
+		"java": ">=8",
+		"fabric": "*"
+	}
+}

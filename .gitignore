@@ -42,3 +42,7 @@ replay_*.log
 # minecraft logs
 
 logs/
+
+# per-version test folders
+
+run-*/

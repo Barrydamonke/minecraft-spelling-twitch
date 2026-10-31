@@ -15,17 +15,17 @@ No Twitch login, bot or password needed. The mod just reads your chat, the same 
 
 ## Installing (about 5 minutes)
 
-You need **Minecraft Java Edition 26.3**.
+You need **Minecraft Java Edition 26.3 or 1.16.1**.
 
 1. **Install Fabric** (this is what lets Minecraft run mods).
    - Download the installer from <https://fabricmc.net/use/installer/> and open it.
-   - Pick **Minecraft version 26.3**, leave everything else as it is, and click **Install**.
+   - Pick **Minecraft version 26.3 or 1.16.1**, leave everything else as it is, and click **Install**.
 2. **Download Fabric API** (a helper that most mods need).
-   - Go to <https://modrinth.com/mod/fabric-api/versions>, find a version for **26.3**, and download it.
+   - Go to <https://modrinth.com/mod/fabric-api/versions>, find a version for **26.3 or 1.16.1**, and download it.
 3. **Put both mods in your mods folder.**
    - Press **Windows key + R**, type `%appdata%\.minecraft\mods` and press Enter. (If it says the folder doesn't exist, open `%appdata%\.minecraft` and create a folder called `mods`.)
-   - Drop in the Fabric API file and the **twitchspelling-1.0.0.jar** file.
-4. **Start Minecraft** from the normal launcher, choose the **fabric-loader-26.3** profile, and press Play.
+   - Drop in the Fabric API file and the **twitchspelling-1.1.0.jar** file.
+4. **Start Minecraft** from the normal launcher, choose the **fabric-loader-26.3 or 1.16.1** profile, and press Play.
 
 ## Connecting to your chat (once)
 
